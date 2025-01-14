@@ -17,6 +17,7 @@ return {
         'eslint_d', -- ts/js linter
         'shfmt', -- Shell formatter
         'checkmake', -- linter for Makefiles
+        'rubocop', -- linter for Rails files
       },
       automatic_installation = true,
     }
@@ -27,6 +28,8 @@ return {
       formatting.stylua,
       formatting.shfmt.with { args = { '-i', '4' } },
       formatting.terraform_fmt,
+      diagnostics.rubocop,
+      formatting.rubocop,
     }
 
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
