@@ -37,16 +37,21 @@ return {
       -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
       sources = sources,
       -- you can reuse a shared lspconfig on_attach callback here
-      on_attach = function(client, bufnr)
+
+      -- on_attach method is a method that runs rigth before a user close a buffer, so anything we want to run like a callback.
+      on_attach = function(client, bufnr)  -- this line checks for the
+
+        -- the follwoing code block is for trigring autocomplete for the linters like rubocop.
+        --
         if client.supports_method 'textDocument/formatting' then
-          vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format { async = false }
-            end,
-          })
+        --   vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+        --   vim.api.nvim_create_autocmd('BufWritePre', {
+        --     group = augroup,
+        --     buffer = bufnr,
+        --     callback = function()
+        --       vim.lsp.buf.format { async = false }
+        --     end,
+        --   })
         end
       end,
     }
