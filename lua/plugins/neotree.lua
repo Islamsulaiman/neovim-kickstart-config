@@ -218,7 +218,7 @@ return {
           },
         },
         follow_current_file = {
-          enabled = false, -- This will find and focus the file in the active buffer every time
+          enabled = true, -- This will find and focus the file in the active buffer every time
           --               -- the current file is changed while the tree is open.
           leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
@@ -228,7 +228,8 @@ return {
         -- "open_current",  -- netrw disabled, opening a directory opens within the
         -- window like netrw would, regardless of window.position
         -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
-        use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+        use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
+                                       -- also install `inotify-tools` if on wsl `sudo apt install inotify-tools`
         -- instead of relying on nvim autocmd events.
         window = {
           mappings = {
@@ -309,8 +310,8 @@ return {
     }
 
     vim.cmd [[nnoremap \ :Neotree reveal<cr>]]
-    -- vim.keymap.set('n', '<leader>e', ':Neotree toggle position=left<CR>', { noremap = true, silent = true }) -- focus file explorer on the left
-    vim.keymap.set('n', '<leader>e', ':Neotree toggle position=float<CR>', { noremap = true, silent = true }) -- focus floating file explorer in the center
+    vim.keymap.set('n', '<leader>e', ':Neotree toggle position=left<CR>', { noremap = true, silent = true }) -- focus file explorer on the left
+    vim.keymap.set('n', '<leader>fe', ':Neotree toggle position=float<CR>', { noremap = true, silent = true }) -- focus floating file explorer in the center
     vim.keymap.set('n', '<leader>ngs', ':Neotree float git_status<CR>', { noremap = true, silent = true }) -- open git status window
   end,
 }
