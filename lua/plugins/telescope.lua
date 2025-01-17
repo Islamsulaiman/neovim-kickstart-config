@@ -97,7 +97,19 @@ return {
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
-        previewer = false,
+        previewer = true,
+        layout_strategy = 'horizontal', -- Use horizontal layout
+        layout_config = {
+          horizontal = {
+            width = 0.8,
+            height = 0.7,
+            preview_width = 0.4,
+          },
+          vertical = {
+            width = 0.8,
+            height = 0.7,
+          },
+        },
       })
     end, { desc = '[/] Fuzzily search in current buffer' })
 
