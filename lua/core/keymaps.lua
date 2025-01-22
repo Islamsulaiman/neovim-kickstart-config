@@ -79,3 +79,9 @@ vim.keymap.set('n', '<leader>ll', function()
   vim.diagnostic.open_float()
   vim.diagnostic.open_float()
 end, { desc = 'Open linting violations in floating mode' })
+
+-- copy the current buffer relative path
+vim.keymap.set('n', '<leader>cp', function()
+  vim.fn.setreg('+', vim.fn.expand('%:p'))
+  print("Copied: " .. vim.fn.expand('%:p'))
+end, { desc = 'Copy absolute path of the current buffer' })
