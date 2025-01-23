@@ -85,3 +85,8 @@ vim.keymap.set('n', '<leader>cp', function()
   vim.fn.setreg('+', vim.fn.expand('%:p'))
   print("Copied: " .. vim.fn.expand('%:p'))
 end, { desc = 'Copy absolute path of the current buffer' })
+
+-- Enable reordring tabs
+vim.keymap.set('n', '<C-M-h>', ':BufferLineMovePrev<CR>', { desc = 'Move buffer to the previous position' })
+vim.keymap.set('n', '<C-M-l>', ':BufferLineMoveNext<CR>', { desc = 'Move buffer to the next position' })
+
