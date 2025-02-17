@@ -90,3 +90,7 @@ end, { desc = 'Copy absolute path of the current buffer' })
 vim.keymap.set('n', '<C-M-h>', ':BufferLineMovePrev<CR>', { desc = 'Move buffer to the previous position' })
 vim.keymap.set('n', '<C-M-l>', ':BufferLineMoveNext<CR>', { desc = 'Move buffer to the next position' })
 
+-- Reordring opened tabs
+vim.keymap.set('n', '<C-M-h>', ':BufferLineMovePrev<CR>', { desc = 'Move buffer to the previous position' })
+vim.keymap.set('n', '<C-M-l>', ':BufferLineMoveNext<CR>', { desc = 'Move buffer to the next position' })
+
