@@ -30,6 +30,7 @@ require('lazy').setup {
   require 'plugins.misc',
   require 'plugins.comment',
   require 'plugins.lazygit',
+  require 'plugins.floating_terminal'
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
