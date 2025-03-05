@@ -34,6 +34,7 @@ require('lazy').setup {
   require 'plugins.todo',
   require 'plugins.vim-tmux-navigator',
   require 'plugins.vim-test',
+  require 'plugins.auto-save'
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
