@@ -32,6 +32,7 @@ require('lazy').setup {
   require 'plugins.lazygit',
   require 'plugins.floating_terminal',
   require 'plugins.todo',
+  require 'plugins.vim-tmux-navigator'
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
